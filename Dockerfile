@@ -7,7 +7,9 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN apt-get update && apt-get install -y \
          net-tools \
          procps \
-         wget
+         wget \
+		 m4 \
+		 autoconf
 # install redis extension
 ADD phpredis /usr/src/php/ext/phpredis
 WORKDIR /usr/src/php/ext/phpredis
