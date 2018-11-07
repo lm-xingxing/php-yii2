@@ -11,13 +11,13 @@ RUN apt-get update && apt-get install -y \
 # install redis extension
 ADD phpredis /usr/src/php/ext/phpredis
 WORKDIR /usr/src/php/ext/phpredis
-RUN phpize
+RUN cd /usr/src/php/ext/phpredis && phpize
 RUN ./configure && make && make install
 ADD docker-php-ext-redis.ini /usr/local/etc/php/conf.d/docker-php-ext-redis.ini
 
 # install pcntl extension
 WORKDIR /usr/src/php/ext/pcntl
-RUN phpize
+RUN cd /usr/src/php/ext/pcntl && phpize
 RUN ./configure && make && make install
 ADD docker-php-ext-pcntl.ini /usr/local/etc/php/conf.d/docker-php-ext-pcntl.ini
 
