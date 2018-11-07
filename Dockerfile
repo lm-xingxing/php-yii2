@@ -9,7 +9,8 @@ RUN apt-get update && apt-get install -y \
          procps \
          wget \
 		 m4 \
-		 autoconf
+		 autoconf \
+		 build-essential
 # install redis extension
 ADD phpredis /usr/src/php/ext/phpredis
 WORKDIR /usr/src/php/ext/phpredis
